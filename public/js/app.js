@@ -47341,23 +47341,32 @@ var render = function() {
     "ul",
     { staticClass: "chat" },
     _vm._l(_vm.messages, function(message) {
-      return _c("li", { staticClass: "left clearfix" }, [
-        _c("div", { staticClass: "chat-body clearfix" }, [
-          _c("div", { staticClass: "header" }, [
-            _c("strong", { staticClass: "primary-font" }, [
+      return _c(
+        "li",
+        {
+          staticClass: "clearfix",
+          class: [_vm.auth_user === message.user.id ? "right" : "left"]
+        },
+        [
+          _c("div", { staticClass: "chat-body clearfix" }, [
+            _c("div", { staticClass: "header" }, [
+              _c("strong", { staticClass: "primary-font" }, [
+                _vm._v(
+                  "\n\t\t\t\t\t\t\t" +
+                    _vm._s(message.user.name) +
+                    "\n\t\t\t\t\t\t"
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
               _vm._v(
-                "\n\t\t\t\t\t\t\t" +
-                  _vm._s(message.user.name) +
-                  "\n\t\t\t\t\t\t"
+                "\n\t\t\t\t\t\t" + _vm._s(message.message) + "\n\t\t\t\t\t"
               )
             ])
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v("\n\t\t\t\t\t\t" + _vm._s(message.message) + "\n\t\t\t\t\t")
           ])
-        ])
-      ])
+        ]
+      )
     }),
     0
   )

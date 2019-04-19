@@ -1,6 +1,6 @@
 <template>
     <ul class="chat">
-			<li class="left clearfix" v-for="message in messages">
+			<li class="clearfix" v-for="message in messages" :class="[auth_user === message.user.id ? 'right' : 'left']">
 				<div class="chat-body clearfix">
 					<div class="header">
 						<strong class="primary-font">
@@ -17,7 +17,10 @@
 
 <script>
     export default {
-        props: ['messages']
+        props: ['messages'],
+				props: {
+						auth_user: Number
+				}
     }
 </script>
 

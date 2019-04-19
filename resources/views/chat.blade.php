@@ -9,7 +9,7 @@
                 <div class="panel-heading">Chats</div>
 
                 <div class="panel-body">
-                    <chat-messages :messages="messages"></chat-messages>
+                    <chat-messages :messages="messages" :auth_user="{{$auth_user->id}}"></chat-messages>
                 </div>
                 <div class="panel-footer">
                     <chat-form
@@ -21,4 +21,5 @@
         </div>
     </div>
 </div>
+
 @endsection
